@@ -1,0 +1,38 @@
+{
+    "server":
+    {
+        "bindHost": "localhost",
+        "bindPort": "42069"
+    },
+    "dictionary":
+    {
+        "dictionaryFilename": "data/dictionary/words_alpha.txt",
+        "wordVectorFilename": "data/dictionary/GoogleNews-vectors-negative300.bin",
+        "maxHeaderSize": 50,
+        "maxWordLength": 50,
+        "bufferSize": 65536
+    },
+    "game":
+    {
+        "rngSalt": "your-string-here",
+        "dailyWords": 0,
+        "precacheWords": 5
+    },
+    "strings":
+    {
+        "pageTitle": "Semantle",
+        "error404": "dunno what you're on about mate",
+        "error500": "OOPSIE WOOPSIE!! Uwu We made a fucky wucky!! A wittle fucko boingo! The code monkeys at our headquarters are working VEWY HAWD to fix this!",
+        "xhrError": "Problem communicating with server",
+        "sseError": "Connection with server lost",
+        "unknownUser": "Do I fuckin' know you cunt?  I don't fuckin' think so.  I don't think I fuckin' know you, cunt",
+        "expiredGame": "Game \"{oldGame}\" has ended.  Please click \"Next Word\" when you are ready to advance to \"{newGame}\"",
+        "emptyName": "You have to actually enter a name",
+        "illegalChars": "Illegal characters in name.  You may use letters, numbers, spaces, and any of the following: '\"-_.,?!",
+        "correctGuess": "Yep, that's the one",
+        "repeatGuess": "If at first you don't succeed...",
+        "unknownWord": "{word} ain't no word I ever heard of",
+        "emptyWord": "Yeah, you have to actually enter a word",
+        "multipleWords": "Slow down there, chief.  One word at a time please"
+    }
+}
