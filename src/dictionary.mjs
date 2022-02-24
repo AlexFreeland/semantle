@@ -186,7 +186,7 @@ async function haveSimilarityCached(word)
 	return await fs.promises.access(getSimilarityPath(word)).then(() => true).catch(() => false);
 }
 
-async function getTopSimilarity(word, count = 1000)	//TODO: Optimize top-n calc: no need to keep tens of thousands of words in memory
+async function getTopSimilarity(word, count = 2000)	//TODO: Optimize top-n calc: no need to keep tens of thousands of words in memory
 {
 	if (await haveSimilarityCached(word))	//TODO: verify count
 	{

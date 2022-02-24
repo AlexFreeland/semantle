@@ -2,7 +2,7 @@
 
 So [Wordle](https://www.wordleunlimited.com/) is kind of fun... for about ten minutes, after which point the only way the player hasn't figured out how to consistently beat it is if they have either the vocabulary or the tactical skills of an infant.  Enter [Semantle](https://semantle.novalis.org/), a much better (and much harder) game created by David Turner, where the aim is to determine the target word by asking how well it aligns *semantically* with your guesses.  Hence, presumably, the name.  Anyway this is all very cool, but there are a couple of minor things about it which bug me, to wit:
 1. You're limited to playing a single round per day, and
-2. It's not open source
+2. ~~It's not open source~~ [Now open source!](https://gitlab.com/novalis_dt/semantle)
 
 And by now you can probably infer why this repository exists.
 
@@ -39,7 +39,7 @@ You can set various configuration options for the game by modifying [config.json
 
 After everything else is set up you should be able to simply run `node src/main.mjs` from the repository root to kick off the server's initialization process.  This can take something on the order of tens of seconds, depending on the hardware and the dictionary/word vectors you're using (and this process happens **every** time -- caching the index which the code builds may be on the cards for a future update.)  Eventually it should tell you that the http server is running, at which point you can open it in your browser of choice* and start playing.
 
-*But please note that I have only tested it on Firefox
+*But please note that I have only tested it on desktop Firefox
 
 # Acknowledgements
 

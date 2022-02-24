@@ -48,9 +48,9 @@ async function initServer()
 	await semantle.initialize(config);
 
 	let indexHtml = await fs.promises.readFile('www/index.html', { encoding: 'utf-8' });
-	indexHtml = indexHtml.replace('{title}', config.strings.pageTitle);
+	indexHtml = indexHtml.replaceAll('{title}', config.strings.pageTitle);
 	let leaderboardHtml = await fs.promises.readFile('www/leaderboard.html', { encoding: 'utf-8' });
-	leaderboardHtml = leaderboardHtml.replace('{title}', config.strings.pageTitle);
+	leaderboardHtml = leaderboardHtml.replaceAll('{title}', config.strings.pageTitle);
 	let semantleJs = await fs.promises.readFile('www/semantle.js', { encoding: 'utf-8' });
 	semantleJs = semantleJs.replace('{xhrError}', config.strings.xhrError);
 	semantleJs = semantleJs.replace('{sseError}', config.strings.sseError);

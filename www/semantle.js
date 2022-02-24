@@ -98,7 +98,7 @@ function addGuess(guess)
         }
         else
         {
-            row.insertCell(3).innerText = guess.score.rank ?? '1000+';
+            row.insertCell(3).innerText = guess.score.rank ?? '2000+';
         }
     }
     row.style = 'color: #ff0077;';

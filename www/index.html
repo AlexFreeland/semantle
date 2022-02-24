@@ -11,24 +11,64 @@
         </style>
     </head>
     <body onload="initialize()">
-        <div id="gameInfo">Querying game info from server...</div>
-        <div style="padding: 1em 0 1em 0;">
-            <input type="text" autofocus id="txtWord" onkeydown="watchInput()" />
-            <button type="button" id="btnGuess" onclick="guess()">Guess</button>
-            <button type="button" id="btnNext" onclick="next()">Next Word</button>
-            <span id="message"></span>
-            <div>
-                <div id="scoreInfo"></div>
-                <div>Click <a href="/leaderboard">here</a> to see the leaderboard.</div>
-            </div>
+        <div>
+            <h1>{title}</h1>
+            <p>
+                Like <a href="https://www.wordleunlimited.com/">Wordle</a>, but better.
+                The computer chooses a word, and you have to guess it.
+            </p>
+            <p>
+                Each guess will be rated based on its semantic similarity to the target word.
+                Similarity ranges from -1 (least) to 1 (most,) but be aware that the computer's
+                conception of what exactly "semantic similarity" entails can be kind of, uhhhh,
+                abstruse, so don't be too shocked if you and it aren't always on the same page.
+                Like: a word's antonym isn't going to get a rating of -1, because there are still
+                a whole bunch of ways in which the words <i>are</i> similar, for example: they're
+                both in the same lexical category, and they both occupy a common conceptual space.
+                Even this is anthropomorphizing it too much -- it's an algorithm, dude.  The abstractions
+                which it uses to weigh its judgements are far queerer than we could possibly imagine.
+                Anyway this is all way the christ beyond the scope of what we're doing here so just
+                <a href="https://letmegooglethat.com/?q=word+embedding">Google "word embedding"</a>
+                if you care.
+            </p>
+            <p>
+                So, yes, right: the game.  You have unlimited guesses, and once you're within the two
+                thousand closest words to the target you'll start earning <i>points</i>.  Correctly
+                guessing the target word gets you <i>a thousand</i> of the fuckers.  Or you
+                can give up at any point and advance to the next word with whatever score you've
+                managed to accumulate so far.  There's no going back, though, so, you know...
+                let's not be hasty, yeah?
+            </p>
+            <p>
+                There's a new list of words to guess every day.  Good luck.
+            </p>
         </div>
-        <table id="history">
-            <tr>
-                <th>#</th>
-                <th>Word</th>
-                <th>Similarity</th>
-                <th>Proximity</th>
-            </tr>
-        </table>
+        <hr>
+        <div style="padding: 1em 0 1em 0;">
+            <div id="gameInfo">Querying game info from server...</div>
+            <div style="padding: 1em 0 1em 0;">
+                <input type="text" autofocus id="txtWord" onkeydown="watchInput()" />
+                <button type="button" id="btnGuess" onclick="guess()">Guess</button>
+                <button type="button" id="btnNext" onclick="next()">Next Word</button>
+                <span id="message"></span>
+                <div>
+                    <div id="scoreInfo"></div>
+                    <div>Click <a href="/leaderboard">here</a> to see the leaderboard.</div>
+                </div>
+            </div>
+            <table id="history">
+                <tr>
+                    <th>#</th>
+                    <th>Word</th>
+                    <th>Similarity</th>
+                    <th>Proximity</th>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div>
+            Based on the <a href="https://semantle.novalis.org/">original Semantle</a> (source code at <a href="https://gitlab.com/novalis_dt/semantle">GitLab</a>)
+            <br/>Source code for this version available at <a href="https://github.com/AlexFreeland/semantle">GitHub</a>
+        </div>
     </body>
 </html>
