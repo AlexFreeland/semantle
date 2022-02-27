@@ -155,6 +155,8 @@ async function initialize()
         }
     });
     userSocket.onerror = () => handleError(sseError);
+
+    document.getElementById('txtWord').focus({preventScroll: true});
 }
 
 async function updateGameInfo()

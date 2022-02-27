@@ -4,7 +4,7 @@ So [Wordle](https://www.wordleunlimited.com/) is kind of fun... for about ten mi
 1. You're limited to playing a single round per day, and
 2. ~~It's not open source~~ [Now open source!](https://gitlab.com/novalis_dt/semantle)
 
-And by now you can probably infer why this repository exists.
+This version allows multiple words per day, and also adds a couple of other features like scoring and a leaderboard.
 
 # Disclaimer
 
@@ -33,7 +33,7 @@ You can set various configuration options for the game by modifying [config.json
 - game:
   - rngSalt: a custom string which is concatenated with the current date and used to seed the random number generator for word selection.  This means you can run separate instances of the game with the same salt and all will yield the same target words (e.g. if you want to compete with your friends but can't/won't all have access to the same instance)
   - dailyWords: the maximum number of target words which will be generated per day.  You can specify 0 to make it unlimited, but be aware that players can then hammer that mf "Next Word" button with reckless abandon and peg your CPU
-  - precacheWords: the number of words ahead of the leading player which the game will attempt to precompute the top similarity list for.  Since that calculation can take tens of seconds per word, it's a good idea from a usability standpoint to specify at least 1 here as it avoids players having to wait for it to finish before they can make guesses on a new word
+  - precacheWords: the number of words ahead of the leading player which the game will attempt to precompute the top similarity list for.  Since that calculation can take tens of seconds per word, it's a good idea from a usability standpoint to specify at least 1 here as it greatly reduces the likelihood that it will still be running when players reach a new word (thereby enabling them to get straight to making guesses)
 
 # Usage
 

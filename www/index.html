@@ -1,16 +1,22 @@
 <!doctype html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{title}</title>
         <script src="semantle.js"></script>
         <style type="text/css">
+            *
+            {
+                font-family: "Courier New", Courier, monospace;
+                line-height: 1.5em;
+            }
             th,td
             {
                 padding-right: 3em;
             }
         </style>
     </head>
-    <body onload="initialize()">
+    <body onload="initialize()" style="max-width: 60em;">
         <div>
             <h1>{title}</h1>
             <p>
@@ -47,10 +53,10 @@
         <div style="padding: 1em 0 1em 0;">
             <div id="gameInfo">Querying game info from server...</div>
             <div style="padding: 1em 0 1em 0;">
-                <input type="text" autofocus id="txtWord" onkeydown="watchInput()" />
+                <input type="text" id="txtWord" onkeydown="watchInput()" />
                 <button type="button" id="btnGuess" onclick="guess()">Guess</button>
                 <button type="button" id="btnNext" onclick="next()">Next Word</button>
-                <span id="message"></span>
+                <p id="message"></p>
                 <div>
                     <div id="scoreInfo"></div>
                     <div>Click <a href="/leaderboard">here</a> to see the leaderboard.</div>
