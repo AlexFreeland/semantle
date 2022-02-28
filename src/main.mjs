@@ -177,7 +177,7 @@ async function initServer()
 			
 			console.log(`ERROR: ${err.message}`);
 		}
-		console.log(`Processed "${req.url}" in ${new Date() - requestStartTime}ms`);	//TODO: who cares? remove in prod
+		console.log(`Processed "${req.url}" for "${req.socket.remoteAddress}" in ${new Date() - requestStartTime}ms`);
 	});
 	server.listen(config.server.bindPort, config.server.bindHost, () =>
 	{
