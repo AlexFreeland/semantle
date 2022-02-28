@@ -18,6 +18,10 @@
         "dailyWords": 32,
         "precacheWords": 5
     },
+    "user":
+    {
+        "nameMaxLength": 1024
+    },
     "strings":
     {
         "pageTitle": "Semantle",
@@ -28,6 +32,7 @@
         "unknownUser": "Do I fuckin' know you cunt?  I don't fuckin' think so.  I don't think I fuckin' know you, cunt",
         "expiredGame": "Game \"{oldGame}\" has ended.  Please click \"Next Word\" when you are ready to advance to \"{newGame}\"",
         "emptyName": "You have to actually enter a name",
+        "longName": "Your name may not exceed {maxLength} characters in length.  It's not free file storage",
         "illegalChars": "Illegal characters in name.  You may use letters, numbers, spaces, and any of the following: '\"-_.,?!",
         "correctGuess": "Yep, that's the one",
         "repeatGuess": "If at first you don't succeed...",

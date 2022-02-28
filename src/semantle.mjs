@@ -27,7 +27,7 @@ var getCurrentGame = function() //NOTE: Black magic w/ closure to hide the inter
     };
 }();
 
-function getTarget(game, id)
+function getTarget(game, id)    //TODO: precache tomorrow's targets
 {
     if (config.game.dailyWords > 0 && id >= config.game.dailyWords)
     {
@@ -240,6 +240,10 @@ async function setUserName(userID, name)
     if (!name || !(name = name.trim()))
     {
         return {status: 'NOK', message: config.strings.emptyName};
+    }
+    if (name.length > config.user.nameMaxLength)
+    {
+        return {status: 'NOK', message: config.strings.longName.replace('{maxLength}', config.user.nameMaxLength)};
     }
     if (name.match(/[^a-zA-Z0-9'"\-_\.,\?! ]/))
     {
