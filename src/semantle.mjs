@@ -12,8 +12,7 @@ var getCurrentGame = function() //NOTE: Black magic w/ closure to hide the inter
 
     return () =>
     {
-        let currentDate = new Date();
-        let dateString = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
+        let dateString = new Date().toLocaleDateString('sv');
         let gameID = `${config.game.rngSalt}:${dateString}`;
 
         if (currentID != gameID)

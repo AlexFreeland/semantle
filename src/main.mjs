@@ -85,10 +85,10 @@ async function initServer()
 			let user = await semantle.initUser(userID);
 
 			res.writeHead(200, {'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive'});
-			console.log(`${user.id} opened socket`);
+			console.log(`${req.socket.remoteAddress} opened socket for ${user.id}`);
 			res.socket.on('close', () =>
 			{
-				console.log(`${user.id} closed socket`);
+				console.log(`${req.socket.remoteAddress} closed socket for ${user.id}`);
 			});
 
 			user.eventEmitter.on('joinGame', (user) =>
@@ -177,7 +177,8 @@ async function initServer()
 			
 			console.log(`ERROR: ${err.message}`);
 		}
-		console.log(`Processed "${req.url}" for "${req.socket.remoteAddress}" in ${new Date() - requestStartTime}ms`);
+		let requestEndTime = new Date();
+		console.log(`[${requestEndTime.toLocaleString('sv')}] Processed "${req.url}" for "${req.socket.remoteAddress}" in ${requestEndTime - requestStartTime}ms`);
 	});
 	server.listen(config.server.bindPort, config.server.bindHost, () =>
 	{
